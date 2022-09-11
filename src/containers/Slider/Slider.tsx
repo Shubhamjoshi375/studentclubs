@@ -1,5 +1,7 @@
+
 import { CSSProperties, useEffect } from "react";
 import { useState } from "react";
+import classes from"./Slider.module.css"
 
 const slides = [
   {
@@ -10,14 +12,16 @@ const slides = [
     url: "http://main.gbpec.ac.in/images/vlcsnap-2022-08-08-18h31m11s838.png",
     title: "audi",
   },
+
   {
-    url: "http://main.gbpec.ac.in/images/vlcsnap-2022-08-08-18h31m11s838.png",
-    title: "audi",
+
+  url:"http://www.gbpec.ac.in/img/img4.jpg",
+
   },
   {
-    url: "http://main.gbpec.ac.in/images/vlcsnap-2022-08-08-18h31m11s838.png",
-    title: "audi",
+    url: "http://www.gbpec.ac.in/img/img6.jpg"
   }
+ 
 ];
 
 const slideStyles: CSSProperties = {
@@ -27,27 +31,6 @@ const slideStyles: CSSProperties = {
   backgroundPosition: "center",
 };
 
-const rightArrowStyles: CSSProperties = {
-  position: "absolute",
-  top: "50%",
-  transform: "translate(0, -50%)",
-  right: "32px",
-  fontSize: "45px",
-  color: "#fff",
-  zIndex: 1,
-  cursor: "pointer",
-};
-
-const leftArrowStyles: CSSProperties = {
-  position: "absolute",
-  top: "50%",
-  transform: "translate(0, -50%)",
-  left: "32px",
-  fontSize: "45px",
-  color: "#fff",
-  zIndex: 1,
-  cursor: "pointer",
-};
 
 const sliderStyles: CSSProperties = {
   position: "relative",
@@ -58,21 +41,19 @@ const sliderStyles: CSSProperties = {
 const dotsContainerStyles: CSSProperties = {
   display: "flex",
   justifyContent: "center",
-  margin: "-35px auto 0 auto"
+  margin: "-35px auto 0 auto",
+
+
 
 };
 
-const dotStyle: CSSProperties = {
-  margin: "0 3px",
-  cursor: "pointer",
-  fontSize: "20px",
-  
-
-};
 
 const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const autoScroll = true;
+  let slideInterval :any;
+  let intervalTime = 5000;
 
   
   const goToPrevious = () => {
@@ -94,22 +75,38 @@ const Slider = () => {
   };
 
 
+  function auto() {
+    slideInterval = setInterval(goToPrevious, intervalTime);
+  }
+
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, []);
+
+  useEffect(() => {
+    if (autoScroll) {
+      auto();
+    }
+    return () => clearInterval(slideInterval);
+  }, [currentIndex]);
+
+
 
   return (
     <div style={sliderStyles}>
       <div>
-        <div onClick={goToPrevious} style={leftArrowStyles}>
-          ❰
+        <div  onClick={goToPrevious} >
+          <span className={classes.left_control}>❰ </span>
         </div>
-        <div onClick={goToNext} style={rightArrowStyles}>
-          ❱
+        <div onClick={goToNext} >
+        <span className={classes.right_control}> ❱</span>
         </div>
       </div>
       <div style={slideStylesWidthBackground}></div>
       <div style={dotsContainerStyles}>
         {slides.map((slide, slideIndex) => (
           <div
-            style={dotStyle}
+            className={classes.dotStyle}
             key={slideIndex}
             onClick={() => goToSlide(slideIndex)}
           >

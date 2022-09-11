@@ -1,0 +1,198 @@
+
+
+  .left_control:hover {
+
+    color: #ffffff;;
+    opacity: 0.9;
+  }
+  .right_control:hover {
+
+    color: #ffffff;;
+    opacity: 0.9;
+    
+  }
+
+  .left_control{
+    color: aliceblue;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 32px;
+    font-size: 45px;
+
+    color: #fff;
+    z-index: 1;
+
+    cursor: pointer;
+
+    opacity: 0.5;
+  }
+
+
+  .right_control{
+    color: aliceblue;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 32px;
+    font-size: 45px;
+
+    color: #fff;
+    z-index: 1;
+
+    cursor: pointer;
+
+    opacity: 0.5;
+
+  }
+
+  .dotStyle{
+    margin: 0 3px;
+  cursor: pointer;
+  font-size: 20px;
+  color: white;
+
+
+
+
+  /* display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 1px;
+  text-indent: -999px; */
+  }
+
+  .dotStyle.active {
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    background-color: #ffffff;
+  }
+
+  
+  /* *{
+
+    color: black;
+
+  } */
+  
+  
+  
+  /* .slider {
+  width: 100%;
+  height: 90vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: all 0.5s ease;
+}
+
+@media screen and (min-width: 600px) {
+  .slide img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.slide img {
+  height: 100%;
+}
+
+.current {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.content {
+  position: absolute;
+  top: 23rem;
+  left: 5rem;
+  opacity: 0;
+  width: 50%;
+  color: #fff;
+  padding: 3rem;
+  background: rgba(0, 0, 0, 0.3);
+  -webkit-animation: slide-up 1s ease 0.5s;
+          animation: slide-up 1s ease 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  visibility: hidden;
+}
+
+@-webkit-keyframes slide-up {
+  0% {
+    visibility: visible;
+    top: 23rem;
+  }
+  100% {
+    visibility: visible;
+    top: 17rem;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    visibility: visible;
+    top: 23rem;
+  }
+  100% {
+    visibility: visible;
+    top: 17rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .content {
+    width: 80%;
+  }
+}
+.content > * {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.current .content {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.5s ease;
+}
+
+.arrow {
+  border: 2px solid white;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 999;
+}
+
+.arrow:hover {
+  background-color: #fff;
+  color: #777;
+}
+
+.next {
+  top: 35%;
+  right: 1.5rem;
+}
+
+.prev {
+  top: 35%;
+  left: 1.5rem;
+}
+
+hr {
+  height: 2px;
+  background: white;
+  width: 50%;
+}# sourceMappingURL=Slider.css.map */
