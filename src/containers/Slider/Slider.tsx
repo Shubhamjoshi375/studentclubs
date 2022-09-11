@@ -10,6 +10,14 @@ const slides = [
     url: "http://main.gbpec.ac.in/images/vlcsnap-2022-08-08-18h31m11s838.png",
     title: "audi",
   },
+  {
+    url: "http://main.gbpec.ac.in/images/vlcsnap-2022-08-08-18h31m11s838.png",
+    title: "audi",
+  },
+  {
+    url: "http://main.gbpec.ac.in/images/vlcsnap-2022-08-08-18h31m11s838.png",
+    title: "audi",
+  }
 ];
 
 const slideStyles: CSSProperties = {
@@ -50,17 +58,23 @@ const sliderStyles: CSSProperties = {
 const dotsContainerStyles: CSSProperties = {
   display: "flex",
   justifyContent: "center",
+  margin: "-35px auto 0 auto"
+
 };
 
 const dotStyle: CSSProperties = {
   margin: "0 3px",
   cursor: "pointer",
   fontSize: "20px",
+  
+
 };
 
 const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+
+  
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
@@ -78,6 +92,8 @@ const Slider = () => {
     ...slideStyles,
     backgroundImage: `url(${slides[currentIndex].url})`,
   };
+
+
 
   return (
     <div style={sliderStyles}>
